@@ -1,0 +1,49 @@
+Next Steps:
+    Plan out the visuals once you're inside the app (tabs, features, etc.)
+    
+    Home Tab:
+        -Shows previous workout
+        -Calendar which shows the current month and highlights the days that a workout has been logged
+        -Button which when clicked leads to a new view where you track your workout
+        -Button to see profile and settings
+        -(brainstorm more ideas)
+        
+    Workout View:
+        -Used to log a new workout
+        -Flowchart
+            -New Workout
+                -New Exercise - (click exercise)
+                    -Set 1 - Weight - Reps
+                    -New Set Button
+                
+                -New Exercise Button moves down
+                
+            -Save workout (Add a confirmation message because you can't change after you save)
+            
+    
+    Workout History Tab:
+        -Allows you to see all of your workouts (will have to figure out design later)
+    
+    
+    Progression/Stats Tab:
+        Pie Chart of sets spent on each muscle group
+        Pie Chart of rep ranges (0 - 3, 4 - 7, 8 - 12, 13+)
+        
+        Choose an exercise and get shown:
+            -Graph (time vs weight (shows set with highest weight from the exercise))
+            -Average working weight over the last month and shows comparison to previous month
+            -Average working reps over the last month (no comparison - to each their own imo)
+            -(might add more later)
+        
+        
+    Work on improving visuals for:
+        -LoginView
+        -RegisterView
+    
+
+Plan:
+    -Add a welcome message to WelcomeView
+    -Make LoginView and RegisterView more visually appealing
+    
+    -Work on the visuals for WorkoutView so that you can actually make a workout (doesn't need to save yet)
+
