@@ -115,7 +115,7 @@ struct ProfileView: View {
         
         var body: some View {
             Button(action: {}) {
-                NavigationLink(destination: ProgressionAndStatistics()) {
+                NavigationLink(destination: ProgressionAndStatisticsView()) {
                     Text("View Statistics")
                         .foregroundStyle(Color.teal)
                         .frame(width: UIScreen.main.bounds.width - 10,
@@ -133,7 +133,7 @@ struct ProfileView: View {
         
         var body: some View{
             Button(action: {}) {
-                NavigationLink(destination: ProgressionAndStatistics()) {
+                NavigationLink(destination: ChangeEmailView()) {
                     Text("Change Email")
                         .foregroundStyle(Color.teal)
                         .frame(width: UIScreen.main.bounds.width - 10,
@@ -151,7 +151,7 @@ struct ProfileView: View {
         
         var body: some View {
             Button(action: {}) {
-                NavigationLink(destination: ProgressionAndStatistics()) {
+                NavigationLink(destination: ChangePasswordView()) {
                     Text("Change Password")
                         .foregroundStyle(Color.teal)
                         .frame(width: UIScreen.main.bounds.width - 10,
