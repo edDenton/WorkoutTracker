@@ -23,6 +23,8 @@ struct ProfileView: View {
                     ChangePassword()
                     
                     LogOutButton(viewModel: viewModel)
+                    
+                    DeleteAccountButton(viewModel: viewModel)
                 }
             }
         }
@@ -50,20 +52,18 @@ struct ProfileView: View {
                         
                         VStack{
                             HStack{
-                                Text("Hello")
-                                
                                 Text(user.name)
                             }
                             HStack{
                                 Text("(")
-                                
+                                +
                                 Text(user.email)
-                                
+                                +
                                 Text(")")
                             }
                             HStack{
                                 Text("Date joined: ")
-                                
+                                +
                                 Text(Date(timeIntervalSince1970: user.joined).formatted(date: .abbreviated, time: .omitted))
                             }
                         }
@@ -99,12 +99,43 @@ struct ProfileView: View {
                         .bold()
                 }
             }
-            .padding(.bottom, 20)
+            .padding(.vertical, 1)
             .alert(isPresented: $showLogOutWarning){
                 Alert(title: Text("Log Out"),
                       message: Text("Are you sure you want to log out?"),
                       primaryButton: .destructive(Text("Yes"), action: {
                     viewModel.logOut()
+                }),
+                      secondaryButton: .cancel(Text("No")))
+            }
+        }
+    }
+    
+    struct DeleteAccountButton: View{
+        @ObservedObject var viewModel: ProfileViewModel
+        @State private var showDeleteAccountWarning: Bool = false
+        
+        var body: some View{
+            Button {
+                showDeleteAccountWarning = true
+            } label: {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundStyle(Color.gray.opacity(0.4))
+                        .frame(width: UIScreen.main.bounds.width - 10,
+                               height: 60)
+                        .bold()
+                    Text("Delete Account")
+                        .foregroundStyle(Color.red)
+                        .bold()
+                }
+            }
+            .padding(.vertical, 1)
+            .alert(isPresented: $showDeleteAccountWarning){
+                Alert(title: Text("Delete Account?"),
+                      message: Text("Are you sure you want to delete your account?\n(This action cannot be undone)"),
+                      primaryButton: .destructive(Text("Yes"), action: {
+                    viewModel.deleteAccount()
                 }),
                       secondaryButton: .cancel(Text("No")))
             }
@@ -122,7 +153,6 @@ struct ProfileView: View {
                                height: 60)
                         .bold()
                         .background(Color.gray.opacity(0.4))
-                        .bold()
                         .cornerRadius(10)
                 }
             }
@@ -140,7 +170,6 @@ struct ProfileView: View {
                                height: 60)
                         .bold()
                         .background(Color.gray.opacity(0.4))
-                        .bold()
                         .cornerRadius(10)
                 }
             }
@@ -158,7 +187,6 @@ struct ProfileView: View {
                                height: 60)
                         .bold()
                         .background(Color.gray.opacity(0.4))
-                        .bold()
                         .cornerRadius(10)
                 }
             }

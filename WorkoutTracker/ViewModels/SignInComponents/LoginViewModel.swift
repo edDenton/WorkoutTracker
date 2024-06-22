@@ -23,7 +23,14 @@ class LoginViewModel: ObservableObject{
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password)
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error != nil{
+                DispatchQueue.main.async{
+                    self.errorMessage = "The email address or password entered is incorrect."
+                }
+                return
+            }
+        }
     }
     
     private func validate() -> Bool{

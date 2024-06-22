@@ -33,7 +33,7 @@ struct RegisterView: View {
                     .foregroundStyle(Color.red)
             }
             
-            //First Name Box
+            //First and Last Name Box
             Section{
                 ZStack{
                     TextField("Enter your first and last name", text: $viewModel.name)
@@ -48,12 +48,13 @@ struct RegisterView: View {
             }
             .padding(.bottom, 20)
             
-            //Last Name Box
+            //Email Box
             Section{
                 ZStack{
                     TextField("Enter your email address", text: $viewModel.email)
                         .frame(width: UIScreen.main.bounds.width - 50, height: 20)
                         .autocorrectionDisabled()
+                        .autocapitalization(.none)
                         .background(RoundedRectangle(cornerRadius: 0)
                                     .stroke(Color.teal, lineWidth: 2)
                                     .background(Color.gray.opacity(0.3))
@@ -63,7 +64,7 @@ struct RegisterView: View {
             }
             .padding(.bottom, 20)
             
-            //Email Box
+            //Password Box
             Section{
                 ZStack{
                     SecureField("Enter your password", text: $viewModel.password)
@@ -79,7 +80,7 @@ struct RegisterView: View {
             }
             .padding(.bottom, 20)
             
-            //Password Box
+            //Confirm Password Box
             Section{
                 ZStack{
                     SecureField("Enter your password", text: $viewModel.confirmPassword)

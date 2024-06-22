@@ -45,4 +45,8 @@ class ProfileViewModel: ObservableObject{
             print(error)
         }
     }
+    
+    func deleteAccount(){
+        print("deleted")
+    }
 }

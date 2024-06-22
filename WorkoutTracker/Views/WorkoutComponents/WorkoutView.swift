@@ -96,7 +96,7 @@ struct WorkoutView: View {
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 5)
-                        .frame(width: UIScreen.main.bounds.width - 60, height: 35)
+                        .frame(width: UIScreen.main.bounds.width - 40, height: 35)
                         .foregroundStyle(Color.gray)
                     
                     

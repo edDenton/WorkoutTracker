@@ -41,9 +41,3 @@ Next Steps:
         -RegisterView
     
 
-Plan:
-    -Add a welcome message to WelcomeView
-    -Make LoginView and RegisterView more visually appealing
-    
-    -Work on the visuals for WorkoutView so that you can actually make a workout (doesn't need to save yet)
-

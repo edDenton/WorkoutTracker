@@ -4,9 +4,10 @@
 //
 //  Created by Edward Denton on 4/8/24.
 //
+
+import Foundation
 import FirebaseFirestore
 import FirebaseAuth
-import Combine
 
 class WorkoutHistoryViewModel: ObservableObject {
     @Published var workouts: [Workout] = []

@@ -51,22 +51,24 @@ struct HomeView: View {
                     
                     //Dropdown item which shows the previous workout
                     VStack{
-                        DisclosureGroup("Your Previous Workout", isExpanded: $isExpanded) {
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("Workout 1")
-                                Text("Workout 2")
-                            }
-                            .padding(.vertical, 8)
+                        Text("Your Previous Workout: ")
+                            .bold()
+                            .font(.system(size: 20))
+                            .padding(.vertical, 5)
+                            .frame(width: 375, alignment: .leading)
+                        if viewModel.previousWorkout.id != "INITIALIZER" {
+                            WorkoutItemView(workout: viewModel.previousWorkout)
+                        } else {
+                            Text("No saved workout yet")
+                                .padding(.vertical, 5)
+                                .font(.system(size: 20))
+                            
                         }
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                        .onTapGesture {
-                            withAnimation {
-                                isExpanded.toggle()
-                            }
-                        }
+                        
+                        Rectangle()
+                            .frame(height: 1)
+                            .padding(.vertical, 10)
+                            .foregroundColor(.gray)
                     }
                     .padding(.horizontal, 20)
                     
@@ -75,6 +77,9 @@ struct HomeView: View {
                     //Premade workouts and the option to make workouts
                     
                 }
+            }
+            .onAppear(){
+                viewModel.fetchWorkouts()
             }
         }
     }
