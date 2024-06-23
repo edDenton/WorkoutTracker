@@ -33,6 +33,7 @@ class LoginViewModel: ObservableObject{
         }
     }
     
+    // Requires the email and password to have some requirements to make it a valid log in
     private func validate() -> Bool{
         
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -47,7 +48,7 @@ class LoginViewModel: ObservableObject{
         }
         
         guard password.count >= 8 else {
-            errorMessage = "Your password must contain at least 8 characters what if it overflows."
+            errorMessage = "Your password must contain at least 8 characters."
             return false
         }
         	

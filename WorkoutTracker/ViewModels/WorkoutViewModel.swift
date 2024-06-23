@@ -30,9 +30,9 @@ class WorkoutViewModel: ObservableObject{
     
     init(){
         self.exerciseList = makeExerciseList()
-        
     }
     
+    // Saves the workout to Firebase
     func save(){
         guard let uId = Auth.auth().currentUser?.uid else{
             return
@@ -100,6 +100,7 @@ class WorkoutViewModel: ObservableObject{
         renumberSets(currentExerciseIndex: currentExerciseIndex)
     }
     
+    // Called whenever a set is turned to a warmup set or a set is deleted
     private func renumberSets(currentExerciseIndex: Int){
         var setNumber = 1
         if workout.exercises[currentExerciseIndex].sets.count != 0 {
@@ -114,6 +115,7 @@ class WorkoutViewModel: ObservableObject{
         }
     }
     
+    // Used for a complete list of possible exercises
     private func makeExerciseList() -> [String]{
         return ["Chest",
                 "Dips",

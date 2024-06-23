@@ -20,6 +20,7 @@ class HomeViewModel: ObservableObject{
         
     }
     
+    // Gets all saved workouts and returns the most recently saved workout to be displayed on the HomeView
     @MainActor
     func fetchWorkouts() {
         

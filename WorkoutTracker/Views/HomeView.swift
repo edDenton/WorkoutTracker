@@ -55,7 +55,7 @@ struct HomeView: View {
                             .bold()
                             .font(.system(size: 20))
                             .padding(.vertical, 5)
-                            .frame(width: 375, alignment: .leading)
+                            .frame(width: UIScreen.main.bounds.width - 30, alignment: .leading)
                         if viewModel.previousWorkout.id != "INITIALIZER" {
                             WorkoutItemView(workout: viewModel.previousWorkout)
                         } else {

@@ -35,18 +35,15 @@ class RegisterViewModel: ObservableObject{
                 return
             }
             
-            
             guard let userID = result?.user.uid else {
                 return
             }
             
             self?.insertUserRecord(id: userID)
         }
-        
-        
-        
     }
     
+    // Adds the user data to Firebase
     private func insertUserRecord(id: String){
         let newUser = User(id: id,
                            name: name,
@@ -60,6 +57,7 @@ class RegisterViewModel: ObservableObject{
             .setData(newUser.asDictionary())
     }
     
+    // Requires that the email, password, and name to pass some specifications to have it be a valid log in
     private func validate() -> Bool{
         guard !name.trimmingCharacters(in: .whitespaces).isEmpty,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,

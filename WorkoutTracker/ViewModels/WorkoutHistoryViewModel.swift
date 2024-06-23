@@ -13,9 +13,9 @@ class WorkoutHistoryViewModel: ObservableObject {
     @Published var workouts: [Workout] = []
     private var db = Firestore.firestore()
     
+    // Grabs all previously saved workouts to be shown in WorkoutHistoryView
     @MainActor
     func fetchWorkouts() {
-        
         guard let user = Auth.auth().currentUser else {
             print("No authenticated user")
             return

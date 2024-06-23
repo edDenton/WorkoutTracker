@@ -9,6 +9,7 @@ import Foundation
 
 extension Encodable {
     
+    // Used to turn the user data into a dictionary to be saved into Firebase
     func asDictionary() -> [String: Any] {
         guard let data = try? JSONEncoder().encode(self) else {
             return [:]

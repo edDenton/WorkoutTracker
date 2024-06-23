@@ -54,8 +54,8 @@ class ProfileViewModel: ObservableObject{
     func deleteAccount(){
         errorMessage = ""
         let user = Auth.auth().currentUser
-        let userID = user?.uid
-        let db = Firestore.firestore()
+//        let userID = user?.uid
+//        let db = Firestore.firestore()
     
         user!.delete { error in
             if let error = error {

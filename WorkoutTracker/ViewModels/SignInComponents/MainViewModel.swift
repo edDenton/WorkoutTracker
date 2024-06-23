@@ -20,6 +20,7 @@ class MainViewModel: ObservableObject{
         }
     }
     
+    // Skips the log in process if the users credentials are already found
     public var isSignedIn: Bool{
         return Auth.auth().currentUser != nil
     }

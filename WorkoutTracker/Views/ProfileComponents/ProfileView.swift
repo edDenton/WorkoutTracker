@@ -42,6 +42,7 @@ struct ProfileView: View {
                     .foregroundStyle(Color.teal)
                     .frame(height: 300)
                 
+                // If the user has been found show this view
                 if let user = viewModel.user{
                     HStack{
                         Image(systemName: "person.fill")
@@ -69,6 +70,7 @@ struct ProfileView: View {
                         }
                     }
                 } else {
+                    // Show this view until the user info has been found
                     Text("Loading Profile...")
                         .font(.system(size: 44))
                         .padding()
