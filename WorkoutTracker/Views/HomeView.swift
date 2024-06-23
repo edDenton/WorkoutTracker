@@ -31,15 +31,15 @@ struct HomeView: View {
                         
                         Button(action: {}) {
                             NavigationLink(destination: WorkoutView()) {
-                                Text("Click to track a new workout!")
+                                Text("Track New Workout")
                                     .foregroundColor(.white)
                                     .padding()
-                                    .frame(width: UIScreen.main.bounds.width - 50,
-                                           height: 40)
+                                    .frame(width: UIScreen.main.bounds.width - 30,
+                                           height: 50)
                                     .background(Color.teal)
                                     .bold()
                                     .font(.system(size: 18))
-                                    .cornerRadius(50)
+                                    .cornerRadius(10)
                             }
                         }.padding(.vertical, 10)
                         

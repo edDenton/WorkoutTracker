@@ -76,6 +76,11 @@ struct ProfileView: View {
                         .padding()
                         .bold()
                 }
+                
+                Text(viewModel.errorMessage)
+                    .padding(.top, 200)
+                    .frame(width: UIScreen.main.bounds.width - 20)
+                    .foregroundStyle(Color.black)
             }
             .offset(y: -60)
             .padding(.bottom, -50)
@@ -116,6 +121,8 @@ struct ProfileView: View {
     struct DeleteAccountButton: View{
         @ObservedObject var viewModel: ProfileViewModel
         @State private var showDeleteAccountWarning: Bool = false
+        @State var emailAddress: String = ""
+        @State var password: String = ""
         
         var body: some View{
             Button {

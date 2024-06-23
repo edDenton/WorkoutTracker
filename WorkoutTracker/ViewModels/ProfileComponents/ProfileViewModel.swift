@@ -13,7 +13,6 @@ import SwiftUI
 class ProfileViewModel: ObservableObject{
     @Published var user: User? = nil
     @Published var errorMessage = ""
-    //TODO: Find a way to get this error message to pop up on the screen 
     
     init(){
         
@@ -45,8 +44,7 @@ class ProfileViewModel: ObservableObject{
         do {
             try Auth.auth().signOut()
         } catch{
-            print(error)
-            errorMessage = error.localizedDescription
+            errorMessage = "Error: " + error.localizedDescription
         }
         
     }
@@ -54,16 +52,13 @@ class ProfileViewModel: ObservableObject{
     func deleteAccount(){
         errorMessage = ""
         let user = Auth.auth().currentUser
-//        let userID = user?.uid
-//        let db = Firestore.firestore()
-    
         user!.delete { error in
             if let error = error {
-                print(error as Any)
-                self.errorMessage = error.localizedDescription
+                self.errorMessage = "Error: " + error.localizedDescription
             } else {
                //TODO: Delete user data when account is deleted
             }
         }
+        
     }
 }
