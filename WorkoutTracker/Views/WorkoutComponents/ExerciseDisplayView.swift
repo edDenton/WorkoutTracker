@@ -22,7 +22,7 @@ struct ExerciseDisplayView: View {
                 
                 NewSetButton(currentExerciseIndex: index)
                     .environmentObject(viewModel)
-                    
+                
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.gray)
@@ -30,7 +30,7 @@ struct ExerciseDisplayView: View {
             }
         }
     }
-
+    
     
     struct ExerciseOutlineView: View {
         @EnvironmentObject var viewModel: WorkoutViewModel
@@ -113,9 +113,10 @@ struct ExerciseDisplayView: View {
     
     struct UpdateSet: View {
         @EnvironmentObject var viewModel: WorkoutViewModel
+        @FocusState var isActive: Bool
         var currentExerciseIndex: Int
         var currentSetIndex: Int
-
+        
         var body: some View {
             if currentExerciseIndex < viewModel.workout.exercises.count &&
                 currentSetIndex < viewModel.workout.exercises[currentExerciseIndex].sets.count {
@@ -149,6 +150,7 @@ struct ExerciseDisplayView: View {
                         .offset(x: 57))
                     .keyboardType(.numberPad)
                     
+                    
                     TextField(String(currentSet.weight), text: Binding(
                         get: { String(currentSet.weight) },
                         set: {
@@ -170,10 +172,21 @@ struct ExerciseDisplayView: View {
                         .offset(x: 75)
                         .padding(.leading, 15))
                     .keyboardType(.numberPad)
+                    
                 }
                 .frame(width: UIScreen.main.bounds.width - 70, alignment: .leading)
+                .focused($isActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        
+                        Button("Done") {
+                            isActive = false
+                        }
+                    }
+                }
             }
-                
+            
         }
     }
     
@@ -262,7 +275,7 @@ struct ExerciseDisplayView: View {
             }
         }
     }
-
+    
     struct NewSetButton: View {
         @EnvironmentObject var viewModel: WorkoutViewModel
         var currentExerciseIndex: Int

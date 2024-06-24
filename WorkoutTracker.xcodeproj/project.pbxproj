@@ -46,7 +46,6 @@
 		2B8A098C2C287EC600A66440 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8A098B2C287EC600A66440 /* Launch Screen.storyboard */; };
 		2BB22F2D2BE7FF44005D4723 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB22F2C2BE7FF44005D4723 /* ExerciseSet.swift */; };
 		2BB22F2F2BF032C8005D4723 /* ExerciseDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB22F2E2BF032C8005D4723 /* ExerciseDisplayView.swift */; };
-		2BB22F312BF3094D005D4723 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB22F302BF3094D005D4723 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +105,6 @@
 		2B8A098B2C287EC600A66440 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2BB22F2C2BE7FF44005D4723 /* ExerciseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSet.swift; sourceTree = "<group>"; };
 		2BB22F2E2BF032C8005D4723 /* ExerciseDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDisplayView.swift; sourceTree = "<group>"; };
-		2BB22F302BF3094D005D4723 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +211,6 @@
 		2B18876F2BBCB63D00AAF1A2 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				2BB22F302BF3094D005D4723 /* StringExtension.swift */,
 				2B18873D2BBB8A6F00AAF1A2 /* Assets.xcassets */,
 				2B1887392BBB8A6E00AAF1A2 /* WorkoutTrackerApp.swift */,
 				2B18876A2BBCB4AE00AAF1A2 /* GoogleService-Info.plist */,
@@ -448,7 +445,6 @@
 				2B1887812BBE195B00AAF1A2 /* WelcomeView.swift in Sources */,
 				2B7B36E72C1D2F3A00FF5235 /* ProgressionAndStatisticsViewModel.swift in Sources */,
 				2B18873C2BBB8A6E00AAF1A2 /* MainView.swift in Sources */,
-				2BB22F312BF3094D005D4723 /* StringExtension.swift in Sources */,
 				2B1887772BBCC8DB00AAF1A2 /* User.swift in Sources */,
 				2B18878D2BC3317400AAF1A2 /* HomeViewModel.swift in Sources */,
 				2B1887952BC4B13C00AAF1A2 /* WorkoutHistoryView.swift in Sources */,
