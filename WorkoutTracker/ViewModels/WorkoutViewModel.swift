@@ -39,7 +39,7 @@ class WorkoutViewModel: ObservableObject{
         }
         let db = Firestore.firestore()
         
-        let idForWorkout = UUID().uuidString
+        let idForWorkout = String(workout.dateWorkedOutOn)
         var dataDict: Dictionary<String, [Any]> = [:]
         
         for exercise in workout.exercises {

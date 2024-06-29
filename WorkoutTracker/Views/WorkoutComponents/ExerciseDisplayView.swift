@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseDisplayView: View {
     @EnvironmentObject var viewModel: WorkoutViewModel
+    @FocusState var isActive: Bool
     
     var body: some View {
         VStack{
@@ -27,6 +28,16 @@ struct ExerciseDisplayView: View {
                     .frame(height: 1)
                     .foregroundColor(.gray)
                     .padding(.vertical, 10)
+            }
+        }
+        .focused($isActive)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button("Done") {
+                    isActive = false
+                }
             }
         }
     }
@@ -87,6 +98,7 @@ struct ExerciseDisplayView: View {
     
     struct SetView: View {
         @EnvironmentObject var viewModel: WorkoutViewModel
+        
         var currIndex: Int
         
         var body: some View {
@@ -113,7 +125,6 @@ struct ExerciseDisplayView: View {
     
     struct UpdateSet: View {
         @EnvironmentObject var viewModel: WorkoutViewModel
-        @FocusState var isActive: Bool
         var currentExerciseIndex: Int
         var currentSetIndex: Int
         
@@ -175,16 +186,7 @@ struct ExerciseDisplayView: View {
                     
                 }
                 .frame(width: UIScreen.main.bounds.width - 70, alignment: .leading)
-                .focused($isActive)
-                .toolbar {
-                    ToolbarItemGroup(placement: .keyboard) {
-                        Spacer()
-                        
-                        Button("Done") {
-                            isActive = false
-                        }
-                    }
-                }
+                
             }
             
         }

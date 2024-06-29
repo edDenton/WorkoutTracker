@@ -27,7 +27,7 @@ class WorkoutHistoryViewModel: ObservableObject {
                 workouts = []
                 let querySnapshot = try await db.collection("users").document(userID).collection("workouts").getDocuments()
                 
-                for document in querySnapshot.documents {
+                for document in querySnapshot.documents.reversed() {
                     let dataDict: Dictionary<String, [String]> = try document.data(as: Dictionary<String, [String]>.self)
                     
                     var dateWorkedOutOn: Double = 0.0
